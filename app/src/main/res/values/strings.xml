@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Petagram</string>
+    <string name="nombre">Perro</string>
+    <string name="voto">0</string>
+    <string name="titulo_inicial">Bienvenidos</string>
+    <string name="boton_accesar">Accesar</string>
+    <string name="mensaje">Voto para </string>
+    <string name="texto_accion">Click</string>
+    <string name="top_five">Top 5</string>
+    <string name="top_five_desc">Las 5 mascotas con mas votos</string>
+    <string name="pListaMascotas">pListaMascotas</string>
+    <string name="pParametros">pParametros</string>
 </resources>

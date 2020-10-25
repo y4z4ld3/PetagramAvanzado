@@ -9,6 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MascotasTop5Activity"
+            android:parentActivityName=".MascotasActivity"
+            >
+            <!-- Esto es para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MascotasActivity"></meta-data>
+        </activity>
+        <activity
+            android:name=".MascotasActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Esto es para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"></meta-data>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

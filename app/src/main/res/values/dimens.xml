@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activitiy_horizontal_margin" >16dp</dimen>
+    <dimen name="activitiy_vertical_margin" >16dp</dimen>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+    <dimen name="nombre_size">20sp</dimen>
+    <dimen name="titulo_size">40sp</dimen>
+    <dimen name="peso_capa_lineal_mascota">1</dimen>
+    <dimen name="peso_nombre_voto_mascota">0.5</dimen>
+    <dimen name="padding_mascota">20dp</dimen>
+    <dimen name="margen_top_titulo">20dp</dimen>
+    <dimen name="margen_botton_titulo">40dp</dimen>
+    <dimen name="size_texto_btn_inicio">24sp</dimen>
+    <dimen name="elevacion_acc_bat">4dp</dimen>
+</resources>
