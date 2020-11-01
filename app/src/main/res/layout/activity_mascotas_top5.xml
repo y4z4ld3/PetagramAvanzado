@@ -7,13 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".MascotasTop5Activity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/capa_barra_top5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
     <include android:id="@+id/miActionBar"
         layout="@layout/actionbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMascotasTop5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/miActionBar"/>
+        android:layout_below="@id/capa_barra_top5"/>
 
 </RelativeLayout>

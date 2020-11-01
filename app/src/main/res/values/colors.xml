@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#479A9E</color>
     <color name="colorAccent">#E83B35</color>
     <color name="colortTextoTitulo">#3C2F33</color>
+    <color name="colorTexto">#000000</color>
+    <color name="colorLineaDivisoria">#777575</color>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,25 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MascotasActivity">
 
-
-    <include android:id="@+id/miActionBar"
-        layout="@layout/actionbar"/>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMascotas"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/capa_barra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/miActionBar">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </androidx.viewpager.widget.ViewPager>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:src="@drawable/camara"
         android:id="@+id/fabMiFAB"
-         />
-
-</RelativeLayout>
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/floatbtn_vertical_margin"
+        android:layout_marginRight="@dimen/activitiy_horizontal_margin"
+        android:contentDescription="@string/textoBoton"
+        android:layout_marginEnd="@dimen/activitiy_horizontal_margin" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

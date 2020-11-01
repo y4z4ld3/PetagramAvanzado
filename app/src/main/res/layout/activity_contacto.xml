@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/capa_barra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout android:id="@+id/capa_datos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/capa_barra"
+        android:paddingLeft="@dimen/margen_layer"
+        android:paddingRight="@dimen/margen_layer"
+        android:paddingTop="@dimen/margen_layer"
+        android:paddingBottom="@dimen/margen_layer">
+        <EditText
+            android:id="@+id/edtxt_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/hintNombre"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColorHighlight="@color/colorTexto"/>
+        <EditText
+            android:id="@+id/edtxt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/hintEmail"
+            android:inputType="textEmailSubject"
+            android:singleLine="true"
+            android:textColorHighlight="@color/colorTexto"/>
+        <EditText
+            android:id="@+id/edtxt_mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/descr_height"
+            android:autofillHints="" android:gravity="top"
+            android:hint="@string/hintMensaje"
+            android:inputType="textMultiLine"
+            android:singleLine="true"
+            android:textColorHighlight="@color/colorTexto"/>
+
+        <Button
+            android:id="@+id/btn_enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="@string/textoBoton"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -4,8 +4,17 @@
     <!-- "Mark Favorite", should appear as action button if possible -->
     <item
         android:id="@+id/imgEstrella"
-        android:icon="@drawable/icons8_hotel_96"
+        android:icon="@drawable/ic_estrella"
         android:title="@string/top_five"
         android:contentDescription="@string/top_five_desc"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/mContacto"
+        android:title="@string/mContacto"
+        android:orderInCategory="10" />
+    <item
+        android:id="@+id/mAcercade"
+        android:title="@string/mAcercade"
+        android:orderInCategory="20" />
  </menu>

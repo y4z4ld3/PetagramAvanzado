@@ -24,10 +24,13 @@ public class MascotasTop5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_mascotas_top5);
 
         androidx.appcompat.widget.Toolbar miActionBar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);
+        if (miActionBar != null){
+
+            setSupportActionBar(miActionBar);
+        }
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.pawprint);
+        getSupportActionBar().setIcon(R.drawable.ic_huella);
 
         listaMascotasTop5 = (RecyclerView)findViewById(R.id.rvMascotasTop5);
 

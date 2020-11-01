@@ -2,8 +2,8 @@ package com.example.petagram;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,21 +12,18 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Objects;
 
 
 public class MascotasActivity extends AppCompatActivity {
 
-    private RecyclerView listaMascotas;
-    ArrayList<Mascota> mascotas;
-
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -36,39 +33,39 @@ public class MascotasActivity extends AppCompatActivity {
 
 
         androidx.appcompat.widget.Toolbar miActionBar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(miActionBar);
-        agregarFAB();
+        if (miActionBar != null){
 
+            setSupportActionBar(miActionBar);
+        }
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.pawprint);
+        getSupportActionBar().setIcon(R.drawable.ic_huella);
         //getSupportActionBar().setTitle(app_name);
 
-        listaMascotas = (RecyclerView)findViewById(R.id.rvMascotas);
+        agregarFAB();
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        incializarAdaptador();
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
 
+        setUpViewPager();
+      }
+
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new MascotasFragment());
+        fragments.add(new PerfilMascotaFragment());
+        return fragments;
     }
 
-    public void incializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
-        listaMascotas.setAdapter(adaptador);
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_house);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_galeria);
+        tabLayout.setTabIndicatorFullWidth(true);
     }
 
-    public void inicializarListaMascotas(){
-        mascotas = new ArrayList<Mascota>();
 
-        mascotas.add(new Mascota("Firulais",R.drawable.perro));
-        mascotas.add(new Mascota("Kitty",R.drawable.gato));
-        mascotas.add(new Mascota("Doroty",R.drawable.tortuga));
-        mascotas.add(new Mascota("Lucas",R.drawable.loro));
-        mascotas.add(new Mascota("Rogger",R.drawable.bunny));
-        mascotas.add(new Mascota("Doroty",R.drawable.pez));
-        mascotas.add(new Mascota("Linux",R.drawable.penguin));
-    }
+
 
     public void agregarFAB() {
         FloatingActionButton miFAB = (FloatingActionButton)findViewById(R.id.fabMiFAB);
@@ -94,16 +91,25 @@ public class MascotasActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.menu_opciones, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.imgEstrella:
                 irAMascotaTop5();
+                return true;
+            case R.id.mContacto:
+                intent = new Intent(this,ContactoActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.mAcercade:
+                intent = new Intent(this,AcercaDeActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

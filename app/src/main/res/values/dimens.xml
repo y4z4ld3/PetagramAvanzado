@@ -2,6 +2,7 @@
 <resources>
     <dimen name="activitiy_horizontal_margin" >16dp</dimen>
     <dimen name="activitiy_vertical_margin" >16dp</dimen>
+    <dimen name="floatbtn_vertical_margin" >50dp</dimen>
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="nombre_size">20sp</dimen>
     <dimen name="titulo_size">40sp</dimen>
@@ -12,4 +13,6 @@
     <dimen name="margen_botton_titulo">40dp</dimen>
     <dimen name="size_texto_btn_inicio">24sp</dimen>
     <dimen name="elevacion_acc_bat">4dp</dimen>
+    <dimen name="margen_layer">12dp</dimen>
+    <dimen name="descr_height">140dp</dimen>
 </resources>

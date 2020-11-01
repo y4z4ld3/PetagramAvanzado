@@ -9,8 +9,14 @@
     android:weightSum="1"
     tools:context=".MainActivity">
 
-    <include android:id="@+id/miActionBar"
-        layout="@layout/actionbar"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/capa_barra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <include android:id="@+id/miActionBar"
+            layout="@layout/actionbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/textView"

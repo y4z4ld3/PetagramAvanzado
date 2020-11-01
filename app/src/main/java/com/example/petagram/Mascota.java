@@ -14,6 +14,11 @@ public class Mascota implements Comparable<Mascota> {
         this.foto = foto;
     }
 
+    public Mascota(int foto, int votos) {
+        this.votos = votos;
+        this.foto = foto;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

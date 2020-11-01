@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcercaDeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/capa_barra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tvTituloAcercade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capa_barra"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="@dimen/titulo_size"/>
+
+    <ImageView
+        android:id="@+id/imgLogoAcercade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvTituloAcercade"
+        android:src="@drawable/androide"
+        android:contentDescription="@string/app_name">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tvCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgLogoAcercade"
+        android:gravity="center"
+        android:text="@string/curso"
+        android:textSize="@dimen/titulo_size"/>
+    <TextView
+        android:id="@+id/tvHecho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCurso"
+        android:gravity="center"
+        android:text="@string/copyRight"
+        android:textSize="@dimen/nombre_size"
+        android:textStyle="italic"
+        android:elegantTextHeight="true"/>
+
+</RelativeLayout>
