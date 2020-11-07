@@ -2,20 +2,28 @@ package com.example.petagram;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+
+import com.example.petagram.adapter.PageAdapter;
+import com.example.petagram.pojo.Mascota;
+import com.example.petagram.presentador.MascotasTop5Presenter;
+import com.example.petagram.vista_fragment.MascotasFragment;
+import com.example.petagram.vista_fragment.MascotasTop5Fragment;
+import com.example.petagram.vista_fragment.PerfilMascotaFragment;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MascotasTop5Activity extends AppCompatActivity {
+public class MascotasTop5Activity extends  AppCompatActivity  {
 
-    private RecyclerView listaMascotasTop5;
-    ArrayList<Mascota> mascotas;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -25,36 +33,26 @@ public class MascotasTop5Activity extends AppCompatActivity {
 
         androidx.appcompat.widget.Toolbar miActionBar = (androidx.appcompat.widget.Toolbar) findViewById(R.id.miActionBar);
         if (miActionBar != null){
-
             setSupportActionBar(miActionBar);
         }
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setIcon(R.drawable.ic_huella);
 
-        listaMascotasTop5 = (RecyclerView)findViewById(R.id.rvMascotasTop5);
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotasTop5.setLayoutManager(llm);
-        inicializarListaMascotas();
-        incializarAdaptador();
-
+        tabLayout = (TabLayout) findViewById(R.id.tabLayoutTop5);
+        viewPager = (ViewPager) findViewById(R.id.viewPagerTop5);
+        setUpViewPager();
     }
 
-    public void incializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
-        listaMascotasTop5.setAdapter(adaptador);
+    private ArrayList<Fragment> agregarFragmentsUnico(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new MascotasTop5Fragment());
+        return fragments;
     }
 
-    public void inicializarListaMascotas(){
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota("Linux",R.drawable.penguin));
-        mascotas.add(new Mascota("Lucas",R.drawable.loro));
-        mascotas.add(new Mascota("Kitty",R.drawable.gato));
-        mascotas.add(new Mascota("Firulais",R.drawable.perro));
-        mascotas.add(new Mascota("Doroty",R.drawable.tortuga));
-
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragmentsUnico() ));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabIndicatorFullWidth(true);
     }
 }

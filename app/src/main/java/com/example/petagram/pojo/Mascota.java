@@ -1,12 +1,12 @@
-package com.example.petagram;
+package com.example.petagram.pojo;
 
 public class Mascota implements Comparable<Mascota> {
+    private int id_mascota;
     private String nombre;
     private int foto;
     private int votos = 0;
 
-    public String getNombre() {
-        return nombre;
+    public Mascota() {
     }
 
     public Mascota(String nombre, int foto) {
@@ -17,6 +17,10 @@ public class Mascota implements Comparable<Mascota> {
     public Mascota(int foto, int votos) {
         this.votos = votos;
         this.foto = foto;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public void setNombre(String nombre) {
@@ -37,6 +41,14 @@ public class Mascota implements Comparable<Mascota> {
 
     public void setVotos(int votos) {
         this.votos = votos;
+    }
+
+    public int getId_mascota() {
+        return id_mascota;
+    }
+
+    public void setId_mascota(int id_mascota) {
+        this.id_mascota = id_mascota;
     }
 
     @Override

@@ -1,9 +1,11 @@
-package com.example.petagram;
+package com.example.petagram.pojo;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
+
+import com.example.petagram.R;
 
 import java.util.Properties;
 

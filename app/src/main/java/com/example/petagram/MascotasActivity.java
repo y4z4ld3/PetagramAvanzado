@@ -12,6 +12,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.petagram.adapter.PageAdapter;
+import com.example.petagram.vista_fragment.MascotasFragment;
+import com.example.petagram.vista_fragment.PerfilMascotaFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -120,16 +124,6 @@ public class MascotasActivity extends AppCompatActivity {
     public void irAMascotaTop5(){
         Bundle extras = new Bundle();
         Intent intent = new Intent(this,MascotasTop5Activity.class);
-        /*
-        ArrayList<Mascota> mascotastop5 = new ArrayList<Mascota>();
-        Collections.sort(mascotas);
-        for (int i=0; i<4; i++){
-            mascotastop5.add(new Mascota(mascotas.get(i).getNombre(),mascotas.get(i).getFoto()));
-        }
-        //extras.putSerializable("pListaMascotas",(Serializable)mascotastop5);
-        // intent.putExtra("pParametros",extras);
-
-         */
         startActivity(intent);
     }
 }

@@ -1,16 +1,17 @@
-package com.example.petagram;
+package com.example.petagram.adapter;
 
 import android.app.Activity;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.petagram.pojo.Mascota;
+import com.example.petagram.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.petagram;
+package com.example.petagram.adapter;
 
 
 import android.app.Activity;
@@ -13,10 +13,15 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.petagram.db.InteractorMascotas;
+import com.example.petagram.pojo.Mascota;
+import com.example.petagram.R;
+
 import java.util.ArrayList;
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder>{
 
+    private static final int VOTO = 1;
     ArrayList<Mascota> mascotas_ad;
     Activity activity;
 
@@ -46,13 +51,16 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             mascotaViewHolder.imgHuesoBlanco.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mascota_hold.setVotos(mascota_hold.getVotos()+1);
+                    mascota_hold.setVotos(mascota_hold.getVotos()+VOTO);
                     mascotaViewHolder.tvVotos.setText(String.valueOf(mascota_hold.getVotos()));
                     Toast toast;
-                    String mensaje = activity.getResources().getString(R.string.mensaje)+ "" + mascota_hold.getNombre() ;
+                    String mensaje = activity.getResources().getString(R.string.mensaje)+ " " + mascota_hold.getNombre() ;
                     toast = Toast.makeText(activity, mensaje ,Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER,0,0);
                     toast.show();
+
+                    InteractorMascotas interactorMascotas = new InteractorMascotas(activity);
+                    interactorMascotas.votarMascota(mascota_hold);
                 }
             });
         }

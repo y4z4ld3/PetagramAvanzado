@@ -15,4 +15,9 @@
     <dimen name="elevacion_acc_bat">4dp</dimen>
     <dimen name="margen_layer">12dp</dimen>
     <dimen name="descr_height">140dp</dimen>
+    <dimen name="tabTop5">0dp</dimen>
+    <dimen name="civ_shadow_radius">10</dimen>
+    <dimen name="civ_border_width">6dp</dimen>
+    <dimen name="civ_width">200dp</dimen>
+    <dimen name="civ_height">200dp</dimen>
 </resources>

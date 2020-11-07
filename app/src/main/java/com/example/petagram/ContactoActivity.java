@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.petagram.pojo.SendMail;
+
 import java.util.Objects;
 
 
@@ -53,7 +55,6 @@ public class ContactoActivity extends AppCompatActivity {
                     Toast.makeText(ContactoActivity.this, getResources().getString(R.string.msgDatosFaltantes), Toast.LENGTH_SHORT).show();
                 else {
                     sendEmail();
-                    limpiarView();
                 }
             }
         });
@@ -70,6 +71,8 @@ public class ContactoActivity extends AppCompatActivity {
 
         //Ejecutando sendmail enviando email
         sm.execute();
+
+        limpiarView();
     }
 
     /**/

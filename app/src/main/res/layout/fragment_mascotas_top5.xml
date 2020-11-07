@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista_fragment.MascotasFragment">
+    tools:context=".vista_fragment.MascotasTop5Fragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMascotas"
+        android:id="@+id/rvMascotasTop5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capa_barra_top5"/>
 
 </FrameLayout>

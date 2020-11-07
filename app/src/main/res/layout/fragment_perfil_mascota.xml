@@ -3,14 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilMascotaFragment">
+    xmlns:app="http://schemas.android.com/tools"
+    tools:context=".vista_fragment.PerfilMascotaFragment"
+    tools:ignore="NamespaceTypo">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
         tools:ignore="UselessParent">
 
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgFotoPerfilMascota"
+            android:layout_width="@dimen/civ_width"
+            android:layout_height="@dimen/civ_height"
+            android:src="@drawable/dogface_100527"
+            android:layout_gravity="center"
+            app:civ_circle_color="@color/colorAccent"
+            app:civ_border="true"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="@dimen/civ_border_width"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="@dimen/civ_shadow_radius"
+            app:civ_shadow_color="@color/colorTexto"/>
+        <!--
         <ImageView
             android:id="@+id/imgFotoPerfilMascota"
             android:layout_width="match_parent"
@@ -18,7 +35,7 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/dogface_100527"
             android:contentDescription="@string/nombre" />
-
+        -->
         <TextView
             android:id="@+id/tvNombrePerfilMascota"
             android:layout_width="match_parent"
@@ -35,8 +52,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMascotasColeccion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal"
+            android:padding="@dimen/margen_top_titulo"
+            />
+</LinearLayout>
 
 
 </FrameLayout>
