@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.petagram.R;
 import com.example.petagram.pojo.Mascota;
 
+
 import java.util.ArrayList;
 
 public class InteractorPerfilMascota {
@@ -31,5 +32,11 @@ public class InteractorPerfilMascota {
 
         return coleccion;
     }
+    /*
+    public ArrayList<Mascota> obtenerDatosPerfil(){
+        ArrayList<Mascota> coleccion = new ArrayList<>();
+        return coleccion;
+    }
+*/
 
 }

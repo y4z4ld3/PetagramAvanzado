@@ -3,6 +3,7 @@
     package="com.example.petagram">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_mi_app"
@@ -10,6 +11,15 @@
         android:roundIcon="@mipmap/ic_mi_app_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ConfigurarCuentaActivity"
+            android:parentActivityName=".MascotasActivity"
+            >
+            <!-- Esto es para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MascotasActivity" />
+        </activity>
         <activity
             android:name=".AcercaDeActivity"
             android:parentActivityName=".MascotasActivity">
@@ -19,15 +29,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MascotasActivity" />
         </activity>
-
         <activity
             android:name=".ContactoActivity"
             android:parentActivityName=".MascotasActivity">
 
-        <!-- Esto es para versiones 4.0 o menos -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MascotasActivity" />
+            <!-- Esto es para versiones 4.0 o menos -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MascotasActivity" />
         </activity>
         <activity
             android:name=".MascotasTop5Activity"

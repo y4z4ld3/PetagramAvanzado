@@ -42,6 +42,8 @@ public class MascotasTop5Activity extends  AppCompatActivity  {
         tabLayout = (TabLayout) findViewById(R.id.tabLayoutTop5);
         viewPager = (ViewPager) findViewById(R.id.viewPagerTop5);
         setUpViewPager();
+
+
     }
 
     private ArrayList<Fragment> agregarFragmentsUnico(){
@@ -53,6 +55,7 @@ public class MascotasTop5Activity extends  AppCompatActivity  {
     private void setUpViewPager(){
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragmentsUnico() ));
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_galeria);
         tabLayout.setTabIndicatorFullWidth(true);
     }
 }

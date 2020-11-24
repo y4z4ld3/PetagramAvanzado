@@ -11,5 +11,5 @@ public interface IPerfilMascotaFragmentView {
 
     public PerfilMascotaAdaptador crearPerfilMascotaAdaptador(ArrayList<Mascota> coleccion);
 
-    public void inicializarPerfilMascotaAdaptadorRV(PerfilMascotaAdaptador perfilMascotaAdaptador);
+     public void inicializarPerfilMascotaAdaptadorRV(PerfilMascotaAdaptador perfilMascotaAdaptador);
 }

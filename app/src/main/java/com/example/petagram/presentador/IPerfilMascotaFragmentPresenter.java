@@ -4,5 +4,7 @@ public interface IPerfilMascotaFragmentPresenter {
 
     public void obtenerPerfilMascota();
 
+    public void obtenerDatosPerfil();
+
     public void mostrarPerfilMascota();
 }

@@ -1,12 +1,13 @@
 package com.example.petagram.pojo;
 
-public class Mascota implements Comparable<Mascota> {
+public class Mascota extends MascotaApiRest implements Comparable<Mascota> {
     private int id_mascota;
     private String nombre;
     private int foto;
     private int votos = 0;
 
     public Mascota() {
+        super();
     }
 
     public Mascota(String nombre, int foto) {

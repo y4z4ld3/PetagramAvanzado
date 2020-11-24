@@ -17,4 +17,8 @@
         android:id="@+id/mAcercade"
         android:title="@string/mAcercade"
         android:orderInCategory="20" />
+    <item
+        android:id="@+id/mConfigurarCuenta"
+        android:title="@string/mConfCta"
+        android:orderInCategory="30" />
  </menu>

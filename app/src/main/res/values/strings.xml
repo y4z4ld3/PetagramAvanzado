@@ -12,10 +12,13 @@
     <string name="pParametros">pParametros</string>
     <string name="mContacto">Contacto</string>
     <string name="mAcercade">Acerca de</string>
+    <string name="mConfCta">Configurar Cuenta</string>
     <string name="hintEmail">Correo Electrónico</string>
     <string name="hintNombre">Nombre Completo</string>
     <string name="hintMensaje">Su mensaje</string>
+    <string name="hintCuentaUsuario">Escribe tu usuario</string>
     <string name="textoBoton">Enviar Mensaje</string>
+    <string name="textoBotonGuardar">Guardar Cuenta</string>
     <string name="titulo_fragment_mascotas">Mascotas</string>
     <string name="titulo_fragment_perfil_mascotas">Perfil de...</string>
     <string name="copyRight">Desarrollado por: Yazalde Amaya</string>
@@ -25,4 +28,7 @@
     <string name="mensaje_espere">Por favor, espere... </string>
     <string name="mensaje_subject">Correo De: </string>
     <string name="msgDatosFaltantes">Datos Incompletos</string>
+    <string name="msgCuentaErrada">Cuenta Errada</string>
+    <string name="msgCuentaGuardada">Cuenta Guardada</string>
+    <string name="msgCuentaNoAceptada">Cuenta No Aceptada</string>
 </resources>

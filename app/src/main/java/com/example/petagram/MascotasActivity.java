@@ -115,6 +115,10 @@ public class MascotasActivity extends AppCompatActivity {
                 intent = new Intent(this,AcercaDeActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.mConfigurarCuenta:
+                intent = new Intent(this,ConfigurarCuentaActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

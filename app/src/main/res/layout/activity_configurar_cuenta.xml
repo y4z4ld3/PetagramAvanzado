@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfigurarCuentaActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/capa_barra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <include android:id="@+id/miActionBar"
+            layout="@layout/actionbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout android:id="@+id/capa_datos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/capa_barra"
+        android:paddingLeft="@dimen/margen_layer"
+        android:paddingRight="@dimen/margen_layer"
+        android:paddingTop="@dimen/margen_layer"
+        android:paddingBottom="@dimen/margen_layer">
+        <EditText
+            android:id="@+id/edtxt_cuenta_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/hintCuentaUsuario"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/descr_height"
+            android:textColorHighlight="@color/colorTexto"/>
+
+        <Button
+            android:id="@+id/btn_guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="@dimen/descr_height"
+            android:layout_gravity="center"
+            android:padding="@dimen/nombre_size"
+            android:onClick="btnGuadarCuenta"
+            android:text="@string/textoBotonGuardar"/>
+    </LinearLayout>
+
+</RelativeLayout>
